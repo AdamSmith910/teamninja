@@ -194,14 +194,15 @@ class CampgroundInfo extends React.Component {
             <img src={"http://reserveamerica.com"+info.facility_photo_url} />
             <ul>
             <div><li>Facility name: {info.facility_name}</li></div>
-            <li>Contract type: {info.contract_type}</li>
-            <li>Latitude: {info.latitude}</li>
-            <li>Longitude: {info.longitude}</li>
-            <li>Waterfront: {info.waterfront}</li>
-            <li>Pets allowed: {info.pets === 1 ? 'Yes':'No'}</li>
-            <li>Water hookup: {info.water === 1 ? 'Yes':'No'}</li>
-            <li>Power amperage: {info.amps === 0 ? 'No power':info.amps}</li>
-            <li>Sewer hookup: {info.sewer === 1 ? 'Yes':'No'}</li>
+
+                <li style={{flexDirection: 'row'}}>Contract type: {info.contract_type}</li>
+                <li>Latitude: {info.latitude}</li>
+                <li>Longitude: {info.longitude}</li>
+                <li>Waterfront: {info.waterfront}</li>
+                <li>Pets allowed: {info.pets === 1 ? 'Yes':'No'}</li>
+                <li>Water hookup: {info.water === 1 ? 'Yes':'No'}</li>
+                <li>Power amperage: {info.amps === 0 ? 'No power':info.amps}</li>
+                <li>Sewer hookup: {info.sewer === 1 ? 'Yes':'No'}</li>
             </ul>
           </div>
         )
