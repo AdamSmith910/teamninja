@@ -14,7 +14,7 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      filename: path.join(__dirname, '/cgdb_test.sqlite')
+      filename: path.join(__dirname, '/cgdb_dev.sqlite')
     }
   },
 
