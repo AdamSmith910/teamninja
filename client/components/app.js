@@ -199,7 +199,11 @@ class CampgroundList1 extends React.Component {
         var CampgroundListDOM = this;
         let campgroundNodes = allData.map(function (campground, index) {
             let photo = "http://reserveamerica.com" + campground.facility_photo_url;
-            return <div className='camp-details row' onClick={() => (CampgroundListDOM.props.handleCampgroundClick(index))}><img src={photo}/><label>{CampgroundListDOM._correctCasing(campground.facility_name)}</label></div>;
+            return (
+            <div className='camp-details row' onClick={() => (CampgroundListDOM.props.handleCampgroundClick(index))}>
+                {campground.facility_photo_url !== "/images/nophoto.jpg" ? <img src={photo}/> : <img id="hide" src={photo}/>}
+                <label>{CampgroundListDOM._correctCasing(campground.facility_name)}</label>
+            </div>);
         });
         return (
             <div className='campground-list '>
@@ -230,7 +234,7 @@ class CampgroundInfo extends React.Component {
 
         return (
           <div className='campground-info'>
-            <img src={"http://reserveamerica.com"+info.facility_photo_url} />
+            {info.facility_photo_url !== "/images/nophoto.jpg" ? <img src={"http://reserveamerica.com"+info.facility_photo_url} /> : null}
             <div className="caption">{this._correctCasing(info.facility_name)}</div>
             <p></p>
             <ul>
