@@ -37,13 +37,13 @@ var worker = function() {
       console.log("Regenerated campground and campsite tables");
       return collectCampgrounds();
     })
-    .then(function(cgs) {
-      // var testCgs = Array.prototype.slice(cgs, 0, 2);
-      console.log("Collected campgrounds");
-      return collectCampsites(cgs)
-    })
+    // .then(function(cgs) {
+    //   // var testCgs = Array.prototype.slice(cgs, 0, 2);
+    //   console.log("Collected campgrounds");
+    //   return collectCampsites(cgs)
+    // })
     .then(function () {
-      console.log("Collected campsites");
+      console.log("Collected campgrounds");
       db.closeDb();
     })
     .catch(function (err) {
@@ -60,7 +60,7 @@ var collectCampgrounds = function() {
   // Query info for Active's Campground Search API
   //
   var campgrounds = {
-    uri: 'http://api.amp.active.com/camping/campgrounds?pstate=TX',
+    uri: 'http://api.amp.active.com/camping/campgrounds',
     qs: {
       api_key: process.env.getCgApiKey || cfg.getCgApiKey()
     },
